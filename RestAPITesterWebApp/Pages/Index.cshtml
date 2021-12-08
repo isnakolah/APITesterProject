@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="row">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2>Test</h2>
+            <div class="row alert @(Model.Failed ? "alert-danger" : "alert-success")">
+                @Html.DisplayFor(model => model.Message)
+            </div>
+
+            <form method="post">
+                <div class="form-group">
+                    <label asp-for="Endpoint" class="control-label"></label>
+                    <input asp-for="Endpoint" class="form-control" />
+                </div>
+                <div class="form-btn-group pt-3">
+                    <input type="submit" value="Test" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row pt-5 justify-content-center">
+        <div class="col-md-6">
+            <h2>History</h2>
+        </div>
+    </div>
+</div>
